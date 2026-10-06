@@ -40,6 +40,14 @@ THINKING = ybool(env("THINKING", "1"))
 REASONING_START = env("REASONING_START", '<think>')
 REASONING_END = env("REASONING_END", '</think>')
 
+# Upstream-verified (tabbyAPI common/config_models.py@main): ModelConfig
+# carries `reasoning: bool` (reasoning-parser enable, default true) plus
+# reasoning_start_token / reasoning_end_token (default auto). The pack card's
+# example config uses exactly these keys. A literal `thinking:` key would be
+# silently dropped by pydantic (same dead-config class as fix #11 — one shipped
+# here for every flight before this correction). THINKING maps to the real
+# key; per-request control stays chat_template_kwargs {enable_thinking: ..},
+# which is template-level and independent of this server default.
 model_block = f"""model:
   model_dir: /models
   model_name: main
@@ -48,7 +56,9 @@ model_block = f"""model:
   cache_mode: {CACHE_MODE}
   chunk_size: {CHUNK_SIZE}
   max_batch_size: {MAX_BATCH_SIZE}
-  thinking: {THINKING}
+  reasoning: {THINKING}
+  reasoning_start_token: {REASONING_START}
+  reasoning_end_token: {REASONING_END}
 """
 
 if VISION == "true":

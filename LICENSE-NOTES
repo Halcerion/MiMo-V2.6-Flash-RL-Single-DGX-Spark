@@ -1,0 +1,17 @@
+MIT License
+
+Copyright (c) 2026 Halcerion
+
+Ports and extends the repository pattern MiaAI-Lab established for
+single-DGX-Spark serving kits (Qwen3.8-Flash-Next-Single-DGX-Spark-TensorFold,
+MIT). The MiMo-V2.6-Flash-RL EXL3 checkpoint this kit serves is
+benthecarman/MiMo-V2.6-Flash-RL-exl3 (Hugging Face); underlying weights are
+XiaomiMiMo/MiMo-V2.6-Flash-RL under the Xiaomi model license, downloaded at
+deploy time and NOT part of this repository.
+
+The container image is based on NVIDIA's PyTorch container
+(nvcr.io/nvidia/pytorch; NVIDIA license terms print at container start and
+apply to that software). exllamav3 (MIT, turboderp), TabbyAPI (Apache-2.0,
+theroyallab/TabbyAPI).
+
+THIS REPOSITORY COVERS ITS OWN SCRIPTS AND DOCS ONLY.

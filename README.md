@@ -5,7 +5,7 @@ text+vision) from one GB10 DGX Spark through an OpenAI-compatible API:
 
 ```
 git clone https://github.com/Halcerion/MiMo-V2.6-Flash-RL-Single-DGX-Spark.git
-cd mimo-v2.6-flash-rl-single-dgx-spark
+cd MiMo-V2.6-Flash-RL-Single-DGX-Spark
 cp .env.example .env      # set API_KEY if you want it reachable beyond loopback
 ./start.sh
 ```
